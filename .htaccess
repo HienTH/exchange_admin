@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /admin/
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+RewriteRule ^((?!(exchange|login|price|user))[^/].+)$ index.php?page=$1
+
+RewriteRule ^((exchange|login|price|user).*) index.php?page=$1
